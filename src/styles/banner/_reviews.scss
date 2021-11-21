@@ -1,0 +1,82 @@
+.tns-liveregion {
+  display: none;
+}
+
+.reviews-wrapper {
+  position: relative;
+  margin-top: -57px;
+  overflow: hidden;
+  width: 100%;
+}
+
+.reviews-list {
+  display: flex;
+
+  .reviews-item {
+    position: relative;
+    display: inline-block;
+    padding: 15px 15px 12px;
+    border-radius: 10px;
+    background-color: var(--white-card);
+    margin: 0 2px;
+    cursor: pointer;
+
+    @include sm {
+      padding: 20px;
+    }
+
+    &-user {
+      display: flex;
+      justify-content: space-between;
+      padding-bottom: 8px;
+
+      @include sm {
+        padding-bottom: 10px;
+      }
+
+      @include bgsm {
+        padding-bottom: 10px;
+      }
+
+      h3 {
+        font-weight: bold;
+        font-size: 15px;
+        color: var(--black);
+      }
+
+      p {
+        font-size: 15px;
+        font-family: SFProDisplay-Regular, sans-serif;
+        font-weight: 400;
+        color: var(--black);
+        opacity: .46;
+      }
+    }
+
+    .reviews-star {
+      padding-bottom: 9px;
+
+      @include sm {
+        padding-bottom: 11px;
+      }
+
+      @include bgsm {
+        padding-bottom: 16px;
+      }
+    }
+  }
+
+  .review-text {
+    font-size: 13px;
+    font-weight: 400;
+    color: var(--black);
+
+    @include sm {
+      font-size: 15px;
+    }
+
+    @include bgsm {
+      font-size: 15px;
+    }
+  }
+}

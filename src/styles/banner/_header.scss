@@ -1,0 +1,351 @@
+@import "../global/mixins";
+
+.banner {
+  max-width: 415px;
+  margin: 0 auto;
+  background-color: var(--white);
+
+  .banner-bg-woman {
+    position: absolute;
+    top: 55%;
+    left: 50%;
+    transform: translate(-9%, -50%);
+    margin: 0 auto;
+    z-index: 2;
+
+    img {
+      width: 100%;
+      height: 100%;
+    }
+
+    @include sm {
+      top: 56%;
+      transform: translate(-23%, -50%);
+    }
+
+    @include bgsm {
+      top: 55%;
+      transform: translate(-23%, -50%);
+    }
+  }
+
+  &__head {
+    position: relative;
+    background: var(--header);
+  }
+
+  &__btn-close {
+    position: absolute;
+    width: 32px;
+    height: 32px;
+    top: 45px;
+    right: 15px;
+    background-color: rgba(255, 255, 255, .52);
+    border-radius: 50%;
+    cursor: pointer;
+
+    &::after,
+    &::before {
+      content: '';
+      position: absolute;
+      top: 15px;
+      left: 5px;
+      width: 22px;
+      height: 2px;
+      border-radius: 2px;
+      background: linear-gradient(to right, #4D46B1, #894AC9);
+    }
+
+    &::after {
+      transform: rotate(-45deg);
+    }
+
+    &::before {
+      transform: rotate(45deg);
+    }
+  }
+
+  &__title {
+    font-weight: bold;
+    font-family: 'SFProDisplay-Bold', sans-serif;
+    letter-spacing: 0.4px;
+    font-size: 24px;
+    text-align: center;
+    color: #ffffff;
+    padding-bottom: 10px;
+    padding-top: 52px;
+
+    @include sm {
+      padding-top: 82px;
+      padding-bottom: 22px;
+      font-size: 34px;
+    }
+
+    @include bgsm {
+      padding-bottom: 35px;
+      font-size: 34px;
+    }
+  }
+
+  .test-wrap {
+    position: relative;
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    height: 100%;
+  }
+
+  &__head-wrap {
+    padding-bottom: 72px;
+
+
+    @include sm {
+      padding-bottom: 97px;
+    }
+
+    @include bgsm {
+      padding-bottom: 118px;
+    }
+  }
+
+  &__head-list {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    background: var(--header-list);
+
+    .animate-wrap {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+
+      .first-line .small,
+      .second-line .small {
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 1;
+        width: 100%;
+        height: 100%;
+        stroke-dasharray: 1000;
+        stroke-dashoffset: 1000;
+        animation: dash 4s linear;
+        animation-fill-mode: forwards;
+      }
+
+      @include sm {
+        .first-line .small,
+        .second-line .small {
+          display: none;
+        }
+
+        .first-line .average,
+        .second-line .average {
+          position: absolute;
+          top: 0;
+          left: 0;
+          z-index: 1;
+          width: 100%;
+          height: 100%;
+          stroke-dasharray: 1000;
+          stroke-dashoffset: 1000;
+          animation: dash 4s linear;
+          animation-fill-mode: forwards;
+        }
+      }
+
+      @include bgsm {
+        .first-line .small,
+        .second-line .small {
+          display: none;
+        }
+
+        .first-line .average,
+        .second-line .average {
+          display: none;
+        }
+
+        .first-line .big,
+        .second-line .big {
+          position: absolute;
+          top: 0;
+          left: 0;
+          z-index: 1;
+          width: 100%;
+          height: 100%;
+          stroke-dasharray: 1000;
+          stroke-dashoffset: 1000;
+          animation: dash 4s linear;
+          animation-fill-mode: forwards;
+        }
+      }
+
+      .first {
+        position: absolute;
+        z-index: 3;
+        top: 0;
+        right: 79px;
+        opacity: 0;
+        animation: 0.15s show linear;
+        animation-delay: 1.5s;
+        animation-fill-mode: forwards;
+
+        @include sm {
+          top: 10px
+        }
+
+        @include bgsm {
+          top: 16px;
+        }
+      }
+
+      .last {
+        position: absolute;
+        z-index: 3;
+        top: 51px;
+        right: 79px;
+        opacity: 0;
+        animation: 0.15s show linear;
+        animation-delay: 1.5s;
+        animation-fill-mode: forwards;
+
+        @include sm {
+          top: 100px
+        }
+
+        @include bgsm {
+          top: 107px;
+        }
+      }
+
+      .scale-animate {
+        transform: scale(1);
+        animation: cloud 1.5s 10;
+        animation-delay: 2s;
+      }
+
+      .cloud {
+        display: flex;
+        position: absolute;
+        padding: 5px 7px 5px 10px;
+        align-items: center;
+        justify-content: space-between;
+        font-size: 12px;
+        font-weight: bold;
+        background-color: #ffffff;
+        border-radius: 10px;
+        z-index: 2;
+
+        &::after {
+          content: '';
+          position: absolute;
+          top: 99%;
+          left: 50%;
+          width: 0;
+          height: 0;
+          border-left: 4px solid transparent;
+          border-right: 4px solid transparent;
+          border-top: 3px solid #ffffff;
+          transform: translateX(-50%);
+        }
+      }
+
+      .dot {
+        position: absolute;
+        width: 14px;
+        height: 14px;
+        border-radius: 50%;
+        border: 3px solid #ffffff;
+        transform: scale(1);
+        animation-fill-mode: forwards;
+        animation: dot 1s 3;
+      }
+
+      .red {
+        top: 31px;
+        right: -33px;
+        background-color: #ee304e;
+
+        @include sm {
+          top: 44px;
+        }
+
+        @include bgsm {
+          top: 44px;
+        }
+      }
+
+      .green {
+        top: 32px;
+        right: -33px;
+        background-color: #04cd00;
+
+        @include sm {
+          top: 44px;
+        }
+
+        @include bgsm {
+          top: 48px;
+        }
+      }
+    }
+
+    &::before {
+      content: '';
+      position: absolute;
+      top: -50%;
+      right: -50%;
+      bottom: -50%;
+      left: -50%;
+      background: linear-gradient(to bottom, rgba(229, 172, 142, 0), rgba(255, 255, 255, .7) 50%, rgba(229, 172, 142, 0));
+      transform: rotateZ(60deg) translate(-5em, 7.5em);
+      opacity: 0;
+      filter: alpha(opacity=0);
+      animation: sheen 3s linear;
+      animation-delay: 2s;
+    }
+  }
+
+  &__head-list-item {
+    position: relative;
+    font-weight: 400;
+    max-width: 415px;
+    font-size: 12px;
+    color: #ffffff;
+    padding-left: 20px;
+    padding-top: 6px;
+    padding-bottom: 6px;
+
+    @include sm {
+      padding-top: 16px;
+      padding-bottom: 16px;
+    }
+
+    @include bgsm {
+      padding-top: 18px;
+      padding-bottom: 18px;
+    }
+
+    &:nth-child(5)::before {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 1px;
+      background: linear-gradient(to right, transparent 0%, #8258ce 50%, transparent 100%);
+    }
+
+    &::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 1px;
+      background: linear-gradient(to right, transparent 0%, #8258ce 50%, transparent 100%);
+    }
+  }
+}
